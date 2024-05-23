@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qspiders-Training App</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      .retry-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>You're offline. Please check your internet connection.</h1>
+    <button class="retry-button">Retry</button>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const retryButton = document.querySelector(".retry-button");
+
+      retryButton.addEventListener("click", () => {
+        checkInternetConnection();
+      });
+
+      checkInternetConnection(); // Check connection on page load
+
+      function checkInternetConnection() {
+        fetch("https://www.google.com", { mode: "no-cors" })
+          .then(() => {
+            // Internet connection is available
+            window.location.href = "https://alpha.qspiders.com/"; // Redirect to your main app page
+          })
+          .catch(() => {
+            // Internet connection is not available
+            // You can display a message or handle the UI here
+            console.log(
+              "You're still offline. Please check your internet connection."
+            );
+          });
+      }
+    });
+  </script>
+</html>

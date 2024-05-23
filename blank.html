@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qspiders-Training-App</title>
+
+    <style>
+        button {
+            padding: 5px;
+            background-color: darkslategray;
+            border: none;
+            border-radius: 5px;
+            width: 5%;
+            color: white;
+            margin-left: 10px;
+        }
+        
+        #data-display {
+            width: 60%;
+            margin: 0 auto;
+            size: 18px;
+            text-align: justify;
+        }
+        
+        ol h3 {
+            width: 90%;
+            margin: 0 auto;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+
+<body style="background-color: white">
+    <main style="width: 100%; height: auto; text-align: center; padding: 5px">
+        <h1 style="color: orange">
+            Are you sure you want to close the following apps and browser tabs to continue...!
+        </h1>
+
+        <div id="data-display"></div>
+
+        <div style="width: 50%; margin: 0 auto">
+            <button id="buttonYes">YES</button> <button id="buttonNo">NO</button>
+        </div>
+    </main>
+    <h3>Steps to Close Apps - Using Activity Monitor</h3>
+
+    <ol>
+        <li>
+            Open Activity Monitor:
+            <ul>
+                <li>Open Finder and navigate to the "Applications" folder.</li>
+                <li>Go to the "Utilities" folder and open "Activity Monitor".</li>
+                <li>Alternatively, use Spotlight Search by pressing <kbd>Command + Space</kbd> and typing "Activity Monitor".</li>
+            </ul>
+        </li>
+        <li>
+            Select and Close the App:
+            <ul>
+                <li>Click on the app or process you want to close to select it.</li>
+                <li>
+                    Click the "X" button in the top-left corner of the Activity Monitor window.
+                </li>
+                <li>
+                    A confirmation prompt may appear; click "Force Quit" to confirm and close the selected app.
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Verify Closure:
+            <ul>
+                <li>
+                    Check that the app has been closed by looking at the application window or by rechecking the Activity Monitor to confirm it's no longer listed among the running processes.
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Steps to Close Apps - Using Terminal</h3>
+    <ol>
+        <li>
+            Open Terminal:
+            <ul>
+                <li>Open Finder and navigate to the "Applications" folder.</li>
+                <li>Go to the "Utilities" folder and open "Terminal".</li>
+                <li>Alternatively, use Spotlight Search by pressing <kbd>Command + Space</kbd> and typing "Terminal".</li>
+            </ul>
+        </li>
+        <li>
+            Execute Terminal Commands to Close Apps:
+            <ul>
+                <li>
+                    Enter the following command to list running processes:
+                </li>
+                <pre><code>ps aux</code></pre>
+                <li>
+                    Find the process ID (PID) of the app you want to close. For example, to close Safari, you might find its PID by looking for "Safari" in the list.
+                </li>
+                <li>
+                    Enter the following command to close the app:
+                </li>
+                <pre><code>kill -9 PID</code></pre>
+                <li>
+                    Replace "PID" with the actual process ID of the app you want to close.
+                </li>
+                <li>
+                    Execute the command by pressing the <kbd>Enter</kbd> key.
+                </li>
+                <li>
+                    Repeat the command with different process IDs to close multiple apps.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Verify App Closure:
+            <ul>
+                <li>
+                    Check that the apps have been closed by verifying their absence in the Activity Monitor or by attempting to restart the closed apps.
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <script src="./blank.js"></script>
+</body>
+
+</html>
